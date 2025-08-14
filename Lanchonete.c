@@ -9,7 +9,10 @@ int main()
     double PROD4 = 5.00;
 	char nome[20];
 	int cod, quant = 0;
-	int quant1, quant2, quant3, quant4 = 0;
+	int quant1 = 0;
+	int quant2 = 0;
+	int quant3 = 0;
+	int quant4 = 0;
 
 	double prod[5];
 
@@ -40,14 +43,14 @@ int main()
 	do{
 	        printf("   \n");
 			printf("     Digite o codigo do produto:  ");
-	        scanf("%d",&cod);
-			printf("    \n");
-			printf("      \n");
+	        scanf("%d\a",&cod);
+
+
 
 		switch(cod)
 		{
 			case 1:
-			printf("      \n");
+
 			printf("    \n");
 			printf("    | X-Salada ---------- R$ 15.00 |\n");
 			printf(" \n");
@@ -55,7 +58,7 @@ int main()
 			break;
 
 			case 2:
-			printf("      \n");
+
 			printf("    \n");
 			printf("    | X-Burguer --------- R$ 10.00 |\n");
 			printf("    \n");
@@ -63,7 +66,7 @@ int main()
 			break;
 
 			case 3:
-			printf("      \n");
+
 			printf("    \n");
 			printf("    | Suco Laranja ------ R$ 9.00  |\n");
 			printf("    \n");
@@ -71,7 +74,7 @@ int main()
 			break;
 
 			case 4:
-			printf("      \n");
+
 			printf("    \n");
 			printf("    | Refri Lata -------- R$ 5.00  |\n");
 			printf("   \n");
@@ -79,12 +82,13 @@ int main()
 			break;
 
 			default:
-			printf("      \n");
+
 			printf("    \n");
 			printf("    | Código inválido!  |\n");
 			printf("   \n");
 
 		}
+
 
 
 		if(cod == 1)
@@ -133,7 +137,7 @@ int main()
 		}
 
 		printf("      \n");
-		printf("     _____________________________________");
+		printf("     --------------------------------------\n");
 		printf("      \n");
 		printf("     Deseja algo mais? (0 = NAO | 1 = SIM)");
 		scanf("%d",&menu);
@@ -143,21 +147,20 @@ int main()
 	}while(menu != 0);
 
 	printf("     RESUMO DO PEDIDO:\n");
-	printf("     ___________________________");
+	printf("     --------------------------------------\n");
 	printf("      \n");
 	printf("     %d X-Salada ------- R$ %.2lf\n", quant1, prod[1]);
 	printf("     %d X-Burguer ------ R$ %.2lf\n", quant2, prod[2]);
 	printf("     %d Suco Laranja---- R$ %.2lf\n", quant3, prod[3]);
 	printf("     %d Refri Lata ----- R$ %.2lf\n", quant4, prod[4]);
-	printf("      \n");
-	printf("     ___________________________");
+	printf("     --------------------------------------\n");
 	total = prod[1] + prod[2] + prod[3] + prod[4];
 
 
 	printf("      \n");
 	printf("     ");
 	printf("      \n");
-	printf("     | TOTAL DA COMPRA = %.2lf |\n ",total);
+	printf("     | TOTAL DA COMPRA = R$ %.2lf |\n ",total);
 	printf("     ");
 	printf("      \n");
 	printf("     _________________________________________________\n");
@@ -167,4 +170,3 @@ int main()
 
 	return (0);
 }
-
