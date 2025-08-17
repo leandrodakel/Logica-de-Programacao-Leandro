@@ -19,14 +19,34 @@ int main()
 	double total = 0.0;
 	int menu = 0;
 
+do{
+
+	PROD1 = 15.00;
+    PROD2 = 10.00;
+    PROD3 = 9.00;
+    PROD4 = 5.00;
+	cod, quant = 0;
+	quant1 = 0;
+	quant2 = 0;
+	quant3 = 0;
+	quant4 = 0;
+
+	prod[5];
+
+	total = 0.0;
+	menu = 2;
+	
+	printf("      \n");
+	printf("BEM-VINDO A LANCHONETE SABOR & CIA!\n");
 	printf("      \n");
 	printf("Informe seu nome: ");
 	scanf("%s", nome);
 
 	printf("      \n");
 	printf("     Bem-vindo, %s !\n\n", nome);
+	
 	printf("     ---------------------------------------------\n");
-	printf("     |          LANCHONETE DO SENAI              |\n");
+	printf("     |                   CARDAPIO                |\n");
 	printf("     |                                           |\n");
 	printf("     |  CODIGO   PRODUTO           PRECO R$      |\n");
 	printf("     |  1        X-Salada          15.00         |\n");
@@ -39,6 +59,8 @@ int main()
 	prod[2] = 0.0;
 	prod[3] = 0.0;
 	prod[4] = 0.0;
+
+
 
 	do{
 	        printf("   \n");
@@ -84,7 +106,7 @@ int main()
 			default:
 
 			printf("    \n");
-			printf("    | Código inválido!  |\n");
+			printf("    | Codigo invalido!  |\a\n");
 			printf("   \n");
 
 		}
@@ -163,10 +185,17 @@ int main()
 	printf("     | TOTAL DA COMPRA = R$ %.2lf |\n ",total);
 	printf("     ");
 	printf("      \n");
-	printf("     _________________________________________________\n");
+	printf("     Deseja encerrar o programa ou fazer um novo pedido? (0 = ENCERRAR | 1 = NOVO PEDIDO)\n");
+	scanf("%d",&menu);
+		printf("     \n");
+		printf("      \n");
+}while(menu != 0);
+		
+
+	printf("     ________________________________________________________\n");
 	printf("      \n");
-	printf("     | Obrigado, %s! Volte sempre a LANCHONETE SENAI |\n",nome);
-	printf("     _________________________________________________\n");
+	printf("     | Obrigado, %s! Volte sempre a LANCHONETE SABOR & CIA! |\n",nome);
+	printf("     ________________________________________________________\n");
 
 	return (0);
 }
