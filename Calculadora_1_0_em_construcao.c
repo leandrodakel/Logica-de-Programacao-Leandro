@@ -1,19 +1,25 @@
 #include<stdio.h>
 
+int Mdc(int a1, int b1);
+int Mmc(int a1, int b1);
 double Soma(double a, double b);
 double Subtracao(double a, double b);
 double Multiplicacao(double a, double b);
 double Divisao(double a, double b);
-double Potenciacao(double base, int expo);
-int RaizQuadrada (int a1);
+int Potenciacao(int base, int expo);
+double RaizQuadrada(int a1);
+int FatorialDuplo(int a1);
+int FatorialSimples(int a1);
+
 
 int main()
 {
-	int opcao = 12;
+	int opcao = 0;
 	double result = 0.0;
 	int result1 = 0;
 	double a = 0.0;
 	double b = 0.0;
+	double c = 0.0;
 	int a1 = 0;
 	int b1 = 0;
 	int expo = 0;
@@ -47,12 +53,12 @@ int main()
 		
 		switch(opcao)
 		{
-			case 0;
+			case 0:
 				printf("Informe o numero maior:\n");
-				scanf("%d",&a);
+				scanf("%d",&a1);
 				printf("Informe o numero menor:\n");
-				scanf("%d",&b);
-				if(a < b)
+				scanf("%d",&b1);
+				if(a1 < b1)
 				{
 					printf("Nao e possivel caldular o MDC realizado a divisao do numero menor pelo maior\n");
 				}
@@ -61,6 +67,7 @@ int main()
 					result1 = Mdc(a1,b1);
 					printf("O resultado e: %d\n",result1);
 				}
+			break;
 			case 1:
 				printf("Informe os numeros que deseja realizar a operacao:\n");
 				scanf("%d",&a1);
@@ -104,7 +111,7 @@ int main()
 			break;	
 			case 6:
 				printf("Informe o numero da base:\n");
-				scanf("%lf",&base);
+				scanf("%d",&base);
 				printf("Informe o numero do expoente\n");
 				scanf("%d",&expo);
 				if(base==0 && expo==0)
@@ -113,8 +120,8 @@ int main()
 				}
 				else
 				{
-					result = Potenciacao(base,expo);
-					printf("O resultado e: %d\n",result);
+					result1 = Potenciacao(base,expo);
+					printf("O resultado e: %d\n",result1);
 				}
 			break;
 			case 7:
@@ -128,33 +135,79 @@ int main()
 			case 8:
 				printf("Informe o numeros que deseja realizar a operacao:\n");
 				scanf("%d",&a1);
-				result1 = RaizQuadrada(a1);
-				printf("O resultado e: %d\n",result1);
+				if(a1 < 0)
+				{
+					printf("Impossivel calcular\n");
+				}
+				else
+				{
+					result1 = RaizQuadrada(a1);
+					printf("O resultado e: %d\n",result1);
+		
+				}
 			break;
 			case 9:
-				printf("Informe o numeros que deseja realizar a operacao:\n");
+				printf("Informe o numero inteiro e positivo:\n");
 				scanf("%d",&a1);
-				result1 = 
-			
+				
+				if(a1 < 0)
+				{
+					printf("Somente e possivel calcular fatorial com numeros positivos e inteiros\n");
+				}
+				else
+				{
+					result1 = FatorialDuplo(a1);
+					printf("O resultado e: %d\n", result1);
+				}				
 			break;
 			case 10:
-			
+				printf("Informe o numero inteiro e positivo:\n");
+				scanf("%d",&a1);
+				if(a1 < 0)
+				{
+					printf("Somente e possivel calcular fatorial com numeros positivos e inteiros\n");
+				}
+				else
+				{
+					result1 = FatorialSimples(a1);
+					printf("O resultado e: %d\n", result1);
+				}	
 			break;
 			case 11:
-			
+				printf("Informe o numeros que deseja realizar a operacao:\n");
+				scanf("%lf",&a);
+				printf("Informe outro numero\n");
+				scanf("%lf",&b);
+				printf("Informe outro numero\n");
+				scanf("%lf",&c);
+				
+				delta = (b * b) - (4 * a * c);
+    
+				if(a == 0 || delta < 0)
+				{
+					printf("Impossivel calcular\n");
+				}
+			 
+				else
+				{
+					x1 = ((-1 * b) + RaizQuadrada(delta)) / (2.0 * a);
+					x2 = ((-1 * b) - RaizQuadrada(delta)) / (2.0 * a);
+					printf("R1 = %.5lf\n", x1);
+					printf("R2 = %.5lf\n", x2);
+				}
 			break;
 		}
 		
 	}while(opcao != 3);
 
-	printf("Obrigado por usar minha calculadora super poderosa caseira\n");
+	printf("Obrigado por usar Calculadora 1.0\n");
 	return(0);
 }
 
 int Mdc(int a1, int b1)
 {
 	int result = 1;
-	while(b != 0)
+	while(b1 != 0)
 	{
 		result = b1;
 		b1 = a1 % b1;
@@ -166,13 +219,18 @@ int Mdc(int a1, int b1)
 int Mmc(int a1, int b1)
 {
 	int result1 = 1;
-	int result2
-	while(b != 0)
+	int result2 = 0;
+	int temp_a1 = 0;
+	int temp_b1 = 0;
+	temp_a1 = a1;
+	temp_b1 = b1;
+	while(temp_b1 != 0)
 	{
-		result1 = b1;
-		b1 = a1 % b1;
+		result1 = temp_b1;
+		temp_b1 = temp_a1 % temp_b1;
+		temp_a1 = result1;
 	}
-	result2 = (a1 * b1) / result1;
+	result2 = (a1 * b1) / temp_a1;
 	return (result2);
 }
 
@@ -206,7 +264,7 @@ double Divisao(double a, double b)
 
 int Potenciacao(int base, int expo)
 {
-	int result = 1.0;
+	int result = 1;
 	for(int i = 0; i<expo; i++)
 	{
 		result = result * base;
@@ -216,16 +274,46 @@ int Potenciacao(int base, int expo)
 
 double RaizQuadrada(int a1)
 {
-	result1 = 0;
-	double x = 0;
-	double novo_x = 0;
+	double result1 = 0.0;
+	double x = 0.0;
+	double novo_x = 0.0;
+	x = a1;
 	for(int i = 0; i < 100; i++)
 	{
 		novo_x = (0.5) * (x + (a1/x));
 		x = novo_x;
 	}
-	x = result1;
+	result1 = x;
 	return (result1);
 }
 
+int FatorialDuplo(int a1)
+{
+	int result1 = 1;
+	if(a1%2 == 0)
+	{
+		for(int i = 2; i <= a1; i=i+2)
+		{
+			result1 = result1 * i;
+		}
+	}
+	else
+	{
+		for(int i = 1; i <= a1; i=i+2)
+		{
+			result1 = result1 * i;
+		}
+	}
+	return (result1);
+}
 
+int FatorialSimples(int a1)
+{
+	
+	int result1 = 1;
+	for(int i = 1; i <= a1; i++)
+	{
+		result1 = result1 * i;
+	}
+	return (result1);
+}
