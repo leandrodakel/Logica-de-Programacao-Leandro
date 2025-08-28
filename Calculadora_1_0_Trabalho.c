@@ -11,6 +11,7 @@ double RaizQuadrada(int a1);
 int FatorialDuplo(int a1);
 int FatorialSimples(int a1);
 void EquacaoSegundoGrau(double a, double b, double c);
+int Modulo(int a1);
 
 int main()
 {
@@ -200,25 +201,19 @@ int Mdc(int a1, int b1)
 		b1 = a1 % b1;
 		a1 = result;
 	}
+	a1 = Modulo(a1);
 	return(a1);
 }
 
 int Mmc(int a1, int b1)
 {
-	int result1 = 1;
-	int result2 = 0;
-	int temp_a1 = 0;
-	int temp_b1 = 0;
-	temp_a1 = a1;
-	temp_b1 = b1;
-	while(temp_b1 != 0)
-	{
-		result1 = temp_b1;
-		temp_b1 = temp_a1 % temp_b1;
-		temp_a1 = result1;
-	}
-	result2 = (a1 * b1) / temp_a1;
-	return (result2);
+	int result = 0;
+	int mdc = 0;
+	int mod = 0;
+	mdc = Mdc(a1,b1);
+	mod = Modulo(a1*b1);
+	result = mod / mdc;
+	return (result);
 }
 
 double Soma(double a, double b)
@@ -326,5 +321,18 @@ void EquacaoSegundoGrau(double a, double b, double c)
 		x1 = ((-1 * b) + RaizQuadrada(delta)) / (2.0 * a);
 		x2 = ((-1 * b) - RaizQuadrada(delta)) / (2.0 * a);
 		printf("Os resultados sao %.5lf e %.5lf\n", x1, x2);
+	}
+}
+
+int Modulo(int a1)
+{
+	if(a1 >= 0)
+	{
+		return(a1);
+	}
+	else
+	{
+		a1 = a1 * (-1);
+		return(a1);
 	}
 }
