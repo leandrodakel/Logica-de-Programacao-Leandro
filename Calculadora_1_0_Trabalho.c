@@ -6,11 +6,11 @@ double Soma(double a, double b);
 double Subtracao(double a, double b);
 double Multiplicacao(double a, double b);
 double Divisao(double a, double b);
-int Potenciacao(int base, int expo);
+double Potenciacao(double base, int expo);
 double RaizQuadrada(int a1);
 int FatorialDuplo(int a1);
 int FatorialSimples(int a1);
-
+void EquacaoSegundoGrau(double a, double b, double c);
 
 int main()
 {
@@ -23,12 +23,8 @@ int main()
 	int a1 = 0;
 	int b1 = 0;
 	int expo = 0;
-	int base = 0;
-	double delta = 0.0;
-	double x1 = 0.0;
-	double x2 = 0.0;
-	
-	
+	double base = 0.0;
+	                                                                                                       
 	do{
 		printf("--------------------------------------------------------\n");
 		printf("|Bem-vindo a Calculadora 1.0...........................|\n");
@@ -47,10 +43,7 @@ int main()
 		printf("|10 - Fatorial Simples (N!)............................|\n");
 		printf("|11 - Equacao do Segundo Grau..........................|\n");
 		printf("--------------------------------------------------------\n");
-		
 		scanf("%d",&opcao);
-
-		
 		switch(opcao)
 		{
 			case 0:
@@ -82,7 +75,7 @@ int main()
 				printf("Informe outro numero\n");
 				scanf("%lf",&b);
 				result = Soma(a,b);
-				printf("O resultado e: %.2lf\n",result);
+				printf("O resultado e: %.5lf\n",result);
 			break;
 			case 3:
 			break;
@@ -98,7 +91,7 @@ int main()
 				else
 				{
 					result = Divisao(a,b);
-					printf("O resultado e: %.2lf\n",result);
+					printf("O resultado e: %.5lf\n",result);
 				}
 			break;
 			case 5:
@@ -107,11 +100,11 @@ int main()
 				printf("Informe outro numero\n");
 				scanf("%lf",&b);
 				result = Subtracao(a,b);
-				printf("O resultado e: %.2lf\n",result);
+				printf("O resultado e: %.5lf\n",result);
 			break;	
 			case 6:
 				printf("Informe o numero da base:\n");
-				scanf("%d",&base);
+				scanf("%lf",&base);
 				printf("Informe o numero do expoente\n");
 				scanf("%d",&expo);
 				if(base==0 && expo==0)
@@ -120,8 +113,8 @@ int main()
 				}
 				else
 				{
-					result1 = Potenciacao(base,expo);
-					printf("O resultado e: %d\n",result1);
+					result = Potenciacao(base,expo);
+					printf("O resultado e: %.5lf\n",result);
 				}
 			break;
 			case 7:
@@ -130,19 +123,19 @@ int main()
 				printf("Informe outro numero\n");
 				scanf("%lf",&b);
 				result = Multiplicacao(a,b);
-				printf("O resultado e: %.2lf\n",result);
+				printf("O resultado e: %.5lf\n",result);
 			break;
 			case 8:
 				printf("Informe o numeros que deseja realizar a operacao:\n");
-				scanf("%d",&a1);
-				if(a1 < 0)
+				scanf("%lf",&a);
+				if(a < 0)
 				{
 					printf("Impossivel calcular\n");
 				}
 				else
 				{
-					result1 = RaizQuadrada(a1);
-					printf("O resultado e: %d\n",result1);
+					result = RaizQuadrada(a);
+					printf("O resultado e: %.5lf\n",result);
 		
 				}
 			break;
@@ -154,7 +147,11 @@ int main()
 				{
 					printf("Somente e possivel calcular fatorial com numeros positivos e inteiros\n");
 				}
-				else
+				else if(a1 == 0)
+				{
+					printf("Por se tratar de um produto vazio, 0!! e igual a 1\n");
+				}
+				else if(a1 > 0)
 				{
 					result1 = FatorialDuplo(a1);
 					printf("O resultado e: %d\n", result1);
@@ -167,7 +164,11 @@ int main()
 				{
 					printf("Somente e possivel calcular fatorial com numeros positivos e inteiros\n");
 				}
-				else
+				else if (a1 == 0)
+				{
+					printf("Por se tratar de um produto vazio, 0! e igual a 1\n");
+				}
+				else if (a1 > 0)
 				{
 					result1 = FatorialSimples(a1);
 					printf("O resultado e: %d\n", result1);
@@ -180,21 +181,7 @@ int main()
 				scanf("%lf",&b);
 				printf("Informe outro numero\n");
 				scanf("%lf",&c);
-				
-				delta = (b * b) - (4 * a * c);
-    
-				if(a == 0 || delta < 0)
-				{
-					printf("Impossivel calcular\n");
-				}
-			 
-				else
-				{
-					x1 = ((-1 * b) + RaizQuadrada(delta)) / (2.0 * a);
-					x2 = ((-1 * b) - RaizQuadrada(delta)) / (2.0 * a);
-					printf("R1 = %.5lf\n", x1);
-					printf("R2 = %.5lf\n", x2);
-				}
+				EquacaoSegundoGrau(a,b,c);
 			break;
 		}
 		
@@ -262,10 +249,10 @@ double Divisao(double a, double b)
 	return (result);
 }
 
-int Potenciacao(int base, int expo)
+double Potenciacao(double base, int expo)
 {
-	int result = 1;
-	for(int i = 0; i<expo; i++)
+	double result = 1.0;
+	for(int i = 0; i < expo; i++)
 	{
 		result = result * base;
 	}
@@ -316,4 +303,28 @@ int FatorialSimples(int a1)
 		result1 = result1 * i;
 	}
 	return (result1);
+}
+
+void EquacaoSegundoGrau(double a, double b, double c)
+{
+	double delta = 0.0;
+	double x1 = 0.0;
+	double x2 = 0.0;
+	
+	delta = Potenciacao(b,2) - (4 * a * c);
+    
+	if(a == 0)
+	{
+		printf("Impossivel realizar divisao por 0\n");
+	}
+	else if(delta < 0)
+	{
+		printf("Impossivel raiz quadrada de numeros negativos\n");
+	}
+	else if (a != 0 && delta >= 0)
+	{
+		x1 = ((-1 * b) + RaizQuadrada(delta)) / (2.0 * a);
+		x2 = ((-1 * b) - RaizQuadrada(delta)) / (2.0 * a);
+		printf("Os resultados sao %.5lf e %.5lf\n", x1, x2);
+	}
 }
