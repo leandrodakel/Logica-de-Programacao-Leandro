@@ -1,0 +1,16 @@
+#include <stdio.h>
+ 
+int main() {
+ 
+    int t = 0;
+    int v = 0;
+    double consumo = 0.0;
+
+    scanf("%d",&t);
+    scanf("%d",&v);
+
+    consumo = ((v*t) / 12.0);
+    printf("%.3lf\n",consumo);
+
+    return 0;
+}
