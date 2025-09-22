@@ -24,7 +24,7 @@ int main()
 	printf("------------------------------------------------\n");
 	printf("Cadastrar novos produtos --------------------- 1\n");
 	printf("Listar produtos ------------------------------ 2\n");
-	printf("Buscar produto por código -------------------- 3\n");
+	printf("Buscar produto por codigo -------------------- 3\n");
 	printf("Atualizar quantidade em estoque -------------- 4\n");
 	printf("Calcular valor total do estoque -------------- 5\n");
 	printf("Sair ----------------------------------------- 6\n");
@@ -68,19 +68,6 @@ int main()
 				printf("------------------------\n\n");
 			}
 			fclose(pont_arq);
-			
-			pont_arq = fopen("estoque.txt","r");
-			
-			printf("LISTAR PRODUTOS\n: ");
-			printf("------------------------------------------------\n\n");				
-			while(fscanf(pont_arq,"%d\n%[^\n]\n%d\n%f\n",&produtos[y].codigo,produtos[y].descricao,&produtos[y].quantidade,&produtos[y].preco) != EOF)
-				{
-					printf("Codigo: %d\n Descricao: %s\n Quantidade: %d\n Preco: %.2f\n\n",produtos[y].codigo,produtos[y].descricao,produtos[y].quantidade,produtos[y].preco);
-					y++;
-				}
-				y = 0;
-				printf("------------------------------------------------\n\n");
-				fclose(pont_arq);
 		}
 		break;
 		case 2:
@@ -88,7 +75,7 @@ int main()
 			printf("------------------------------------------------\n\n");				
 			while(fscanf(pont_arq,"%d\n %s\n%d\n%f\n",&produtos[y].codigo,produtos[y].descricao,&produtos[y].quantidade,&produtos[y].preco) != EOF)
 			{
-				printf("%d\n%s\n%d\n%f\n\n",produtos[y].codigo,produtos[y].descricao,produtos[y].quantidade,produtos[y].preco);
+				printf("Codigo: %d\n Descricao: %s\n Quantidade: %d\n Preco: %.2f\n\n",produtos[y].codigo,produtos[y].descricao,produtos[y].quantidade,produtos[y].preco);
 				y++;
 			}
 			y = 0;
@@ -98,6 +85,7 @@ int main()
 		case 3:
 			printf("BUSCAR PRODUTO POR CÓDIGO\n: ");
 			printf("------------------------------------------------\n\n");
+			
 			pont_arq = fopen("estoque.txt","r");
 	
 			if(pont_arq == NULL)
@@ -107,17 +95,23 @@ int main()
 			else
 			{
 				printf("O arquivo foi aberto com sucesso\n");
+				
+				while(fscanf(pont_arq,"%d\n %s\n%d\n%f\n",&produtos[y].codigo,produtos[y].descricao,&produtos[y].quantidade,&produtos[y].preco) != EOF)
+				{
+					y++;
+				}
+				
 				do{
-					if(indice_codigo >= 0 && indice_codigo <= cadastro)
-					{
-						printf("Informe o código do produto: ");
+					printf("Informe o código do produto: ");
 						scanf("%d",&indice_codigo);
-						indice_codigo--;
-									
-						printf("Código: %d\n",produtos[indice_codigo].codigo);
-						printf("Descrição: %s\n",produtos[indice_codigo].descricao);
-						printf("Quantidade: %d\n",produtos[indice_codigo].quantidade);
-						printf("Preço unitáriio: %.2f\n\n",produtos[indice_codigo].preco);
+					
+					for(int i = 0; i < y; i++)
+					if(produtos[y].codigo == indice_codigo)
+					{
+						printf("Código: %d\n",produtos[y].codigo);
+						printf("Descrição: %s\n",produtos[y].descricao);
+						printf("Quantidade: %d\n",produtos[y].quantidade);
+						printf("Preço unitáriio: %.2f\n\n",produtos[y].preco);
 						printf("--------------------------\n\n");
 					}
 					else
@@ -126,8 +120,10 @@ int main()
 					}
 					
 					fclose(pont_arq);
+					
 					printf("Continuar busca - 1 | Voltar ao menu inicial - 2 ");
 					scanf("%d",&opcao_busca);
+					
 				}while(opcao_busca != 2);
 			}
 		break;
