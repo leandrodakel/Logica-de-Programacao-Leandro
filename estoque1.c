@@ -11,13 +11,12 @@ typedef struct Estoque
 int main()
 {
 	FILE *pont_arq;
-	FILE *pont_arq2;
+	Estoque produtos[100];
 	int menu = 0;
 	int indice_codigo = 0;
 	int cadastro = 0;
 	int opcao_busca = 0;
 	int opcao_atualiza = 0;
-	Estoque produtos[100];
 	float acumulador = 0.0;
 	int y = 0;
 	int t = 0;
