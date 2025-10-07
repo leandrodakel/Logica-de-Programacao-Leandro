@@ -9,12 +9,12 @@ typedef struct Estoque
 	float preco;
 } Estoque;
 
-#include "MinhasFuncoes.h"
+#include "Funcoes.h"
 
 int main()
 {
 	Estoque deposito[1000];
-	int menu = 0;
+	int menu = -1;
 			
 	do{
 		Menu();
@@ -34,16 +34,27 @@ int main()
 				AtualizaProduto(deposito);
 			break;
 			case 5:
-				CalculaTotal(deposito);
+				RemoveProduto(deposito);
 			break;
 			case 6:
+				ReordenaCodigo(deposito);
+			break;
+			case 7:
+				FiltraOrdena(deposito);
+			break;
+			case 8:
+				ApagaDadosSistema(deposito);
+			break;
+			case 9:
+				CalculaTotal(deposito);
+			break;
+			case 0:
 				system("cls");
 				printf("\nSISTEMA FINALIZADO\n\n");
 			break;
 			default:
 				printf("\n\nDigite uma opcao valida\n\n");
 		}
-	}while(menu != 6);	
+	}while(menu != 0);	
 	return (0);
-
 }

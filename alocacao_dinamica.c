@@ -3,7 +3,7 @@
 
 int main()
 {
-	void * vetor;
+	int * vetor;
 	int n = 0;
 	printf("Digite o numero de elementos\n");
 	scanf("%d",&n);

@@ -12,6 +12,7 @@ void Imprimir(estq * pnt_deposito, int tam);
 void BubbleSortCodigo(estq * pnt_deposito, int opcao, int tamanho);
 void BubbleSortQuantidade(estq * pnt_deposito, int opcao, int tamanho);
 void BubbleSortPreco(estq * pnt_deposito, int opcao, int tamanho);
+void BubbleSortDescricao(estq * pnt_deposito, int opcao, int tamanho);
 int CompararPalavras(char *palavra1, char *palavra2);
 void FiltrarOrdenar(estq  * pnt_deposito);
 void ApagarOsDadosDoSistema(estq  * pnt_deposito);
@@ -397,7 +398,7 @@ void BubbleSortPreco(estq * pnt_deposito, int opcao, int tamanho)
 	
 }
 
-int TamanhoPalavra(char * palavra)
+/*int TamanhoPalavra(char * palavra)
 {
 	int i = 0;
 	while(palavra[i] != '\0')
@@ -406,7 +407,7 @@ int TamanhoPalavra(char * palavra)
 	}
 	
 	return(i);
-}
+}**/
 
 int CompararPalavras(char *palavra1, char *palavra2)
 {
