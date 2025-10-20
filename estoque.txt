@@ -22,3 +22,7 @@ uva
 abacaxi
 5
 6.00
+7
+Lapis
+3
+5.70

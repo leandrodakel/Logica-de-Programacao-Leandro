@@ -19,73 +19,95 @@ void ApagaDadosSistema(Estoque  * pnt_deposito);
 
 void Menu()
 {
+	system("chcp 65001");
+	system("color 07");
 	printf("\n");
 	
-	printf("=================================================\n");
-	printf("|            *** B E M - V I N D O ***          |\n");
-	printf("|       GERENCIADOR DE ESTOQUE DE PRODUTOS      |\n");
-	printf("|===============================================|\n");
-	printf("|-----------------------------------------------|\n");
-	printf("|                                               |\n");
-	printf("|   Cadastrar produtos -------------------- 1   |\n");
-	printf("|   Listar produtos ----------------------- 2   |\n");
-	printf("|   Buscar produto por codigo ------------- 3   |\n");
-	printf("|   Atualizar quantidade em estoque ------- 4   |\n");
-	printf("|   Remove produto ------------------------ 5   |\n");
-	printf("|   Reordenar codigos --------------------- 6   |\n");
-	printf("|   Filtrar e ordenar estoque ------------- 7   |\n");
-	printf("|   Apagar TODOS os itens do estoque ------ 8   |\n");
-	printf("|   Calcular valor total do estoque ------- 9   |\n");
-	printf("|   Encerrar sistema  --------------------- 0   |\n");
-	printf("|                                               |\n");
-	printf("|-----------------------------------------------|\n");
-	printf("=================================================\n\n");
+	printf("╔═══════════════════════════════════════════════════╗\n");
+	printf("║               *** B E M - V I N D O ***           ║\n");
+	printf("║          GERENCIADOR DE ESTOQUE DE PRODUTOS       ║\n");
+	printf("╠═══════════════════════════════════════════════════╣\n");
+	printf("║                                     \033[32m**CONSULTAS**\033[0m ║\n");
+	printf("║                                                   ║\n");
+	printf("║   \033[32mOpções que nao alteram o banco de dados\033[0m         ║\n");
+	printf("║                                                   ║\n");
+	printf("║   \033[32mListar produtos ---------------------- 1\033[0m        ║\n");
+	printf("║   \033[32mFiltrar e ordenar estoque ------------ 2\033[0m        ║\n");
+	printf("║   \033[32mBuscar produto por codigo ------------ 3\033[0m        ║\n");
+	printf("║   \033[32mCalcular valor total do estoque ------ 4\033[0m        ║\n");
+	printf("║                                                   ║\n");
+	printf("╠═══════════════════════════════════════════════════╣\n");
+	printf("║                                   \033[33m**ATUALIZACAO**\033[0m ║\n");
+	printf("║                                                   ║\n");
+	printf("║   \033[33mOpcoes que alteram o banco de dados\033[0m             ║\n");
+	printf("║                                                   ║\n");
+	printf("║   \033[33mCadastrar produtos ------------------- 5\033[0m        ║\n");
+	printf("║   \033[33mAtualizar quantidade em estoque ------ 6\033[0m        ║\n");
+	printf("║                                                   ║\n");
+	printf("╠═══════════════════════════════════════════════════╣\n");
+	printf("║                                       \033[31m**DELETAR**\033[0m ║\n");
+	printf("║                                                   ║\n");
+	printf("║   \033[31mAlteracoes irreversiveis no banco de dados\033[0m      ║\n");
+	printf("║                                                   ║\n");
+	printf("║   \033[31mReordenar codigos -------------------- 7\033[0m        ║\n");
+	printf("║   \033[31mRemove produto ----------------------- 8\033[0m        ║\n");
+	printf("║   \033[31mApagar TODOS os itens do estoque ----- 9\033[0m        ║\n");
+	printf("║                                                   ║\n");
+	printf("╠═══════════════════════════════════════════════════╣\n");
+	printf("║                                                   ║\n");
+	printf("║   Encerrar sistema  -------------------- 0        ║\n");
+	printf("║                                                   ║\n");
+	printf("╚═══════════════════════════════════════════════════╝\n\n");
+	
+	
+	
+	
+	
+	
+	
 }
 
 
 
 void Filtro()
 {
-	printf("=================================================\n");
-	printf("|            ORDENAR E FILTRAR LISTA            |\n");
-	printf("|===============================================|\n");
-	printf("|-----------------------------------------------|\n");
-	printf("|                                               |\n");
-	printf("|       Filtrar por DESCRICAO ---------- 1      |\n");
-	printf("|       Filtrar por CODIGO ------------- 2      |\n");
-	printf("|       Filtrar por QUANTIDADE --------- 3      |\n");
-	printf("|       Filtrar por PRECO -------------- 4      |\n");
-	printf("|                                               |\n");
-	printf("|-----------------------------------------------|\n");
-	printf("=================================================\n\n");
+	printf("╔═══════════════════════════════════════════════════╗\n");
+	printf("║              ORDENAR E FILTRAR LISTA              ║\n");
+	printf("╠═══════════════════════════════════════════════════╣\n");
+	printf("║                                                   ║\n");
+	printf("║         Filtrar por DESCRICAO ---------- 1        ║\n");
+	printf("║         Filtrar por CODIGO ------------- 2        ║\n");
+	printf("║         Filtrar por QUANTIDADE --------- 3        ║\n");
+	printf("║         Filtrar por PRECO -------------- 4        ║\n");
+	printf("║                                                   ║\n");
+	printf("╚═══════════════════════════════════════════════════╝\n\n");
 	
 }
 
 void Ordem()
 {
-	printf("=================================================\n");
-	printf("|            ORDENAR E FILTRAR LISTA            |\n");
-	printf("|===============================================|\n");
-	printf("|-----------------------------------------------|\n");
-	printf("|                                               |\n");
-	printf("|         Ordem CRESCENTE ----------- 1         |\n");
-	printf("|         Ordem DECRESCENTE --------- 2         |\n");
-	printf("|                                               |\n");
-	printf("|-----------------------------------------------|\n");
-	printf("=================================================\n\n");
+	printf("╔═══════════════════════════════════════════════════╗\n");
+	printf("║              ORDENAR E FILTRAR LISTA              ║\n");
+	printf("╠═══════════════════════════════════════════════════╣\n");
+	printf("║                                                   ║\n");
+	printf("║            Ordem CRESCENTE ----------- 1          ║\n");
+	printf("║            Ordem DECRESCENTE --------- 2          ║\n");
+	printf("║                                                   ║\n");
+	printf("╚═══════════════════════════════════════════════════╝\n\n");
 	
 }
 
 void Imprimir(Estoque * pnt_deposito, int tam)
 {
 	int i = 0;
-	printf("|==============================================================|\n");
-	printf("| COD |        DESCRICAO         | QUANTIDADE | VALOR UNITARIO |\n");
+	printf("╔══════════════════════════════════════════════════════════════╗\n");
+	printf("║ COD |        DESCRICAO         | QUANTIDADE | VALOR UNITARIO ║\n");
+	printf("╟──────────────────────────────────────────────────────────────╢\n");
 	for(i = 0; i < tam; i++)
 	{
-		printf("|%5d|%26s|%12d|%16.2f|\n",pnt_deposito[i].codigo,pnt_deposito[i].descricao,pnt_deposito[i].quantidade,pnt_deposito[i].preco);
+		printf("║%5d|\033[32m%26s\033[0m|%12d|%16.2f║\n",pnt_deposito[i].codigo,pnt_deposito[i].descricao,pnt_deposito[i].quantidade,pnt_deposito[i].preco);
 	}
-	printf("|==============================================================|\n\n");	
+	printf("╚══════════════════════════════════════════════════════════════╝\n\n");	
 }
 
 void CadastraProduto(Estoque * pnt_deposito)
@@ -130,6 +152,7 @@ void CadastraProduto(Estoque * pnt_deposito)
 	}
 	system("cls");
 	printf("\n\nCADASTRO CONCLUIDO\n\n");
+	
 }
 	
 void ListaProduto(Estoque * pnt_deposito)
@@ -138,18 +161,20 @@ void ListaProduto(Estoque * pnt_deposito)
 	int y = 0;
 	
 	printf("\nLISTA DE PRODUTOS\n");
-	printf("------------------------------------------------\n\n");	
+	printf("-------------------\n\n");	
 	pont_arq = fopen("estoque.txt","r");
 	
-	printf("================================================================\n");
-	printf("| COD |        DESCRICAO         | QUANTIDADE | VALOR UNITARIO |\n");
-	printf("================================================================\n");
+	printf("╔══════════════════════════════════════════════════════════════╗\n");
+	printf("║                     **LISTA DE PRODUTOS**                    ║\n");
+	printf("╠══════════════════════════════════════════════════════════════╣\n");	
+	printf("║ COD |        DESCRICAO         | QUANTIDADE | VALOR UNITARIO ║\n");
+	printf("╟──────────────────────────────────────────────────────────────╢\n");
 	while(fscanf(pont_arq,"%d\n%[^\n]\n%d\n%f\n",&pnt_deposito[y].codigo,pnt_deposito[y].descricao,&pnt_deposito[y].quantidade,&pnt_deposito[y].preco) != EOF)
 	{
-		printf("|%5d|%26s|%12d|%16.2lf|\n",pnt_deposito[y].codigo,pnt_deposito[y].descricao,pnt_deposito[y].quantidade,pnt_deposito[y].preco);
+		printf("║%5d|\033[32m%26s\033[0m|%12d|%16.2lf║\n",pnt_deposito[y].codigo,pnt_deposito[y].descricao,pnt_deposito[y].quantidade,pnt_deposito[y].preco);
 		y++;
 	}
-	printf("================================================================\n");	
+	printf("╚══════════════════════════════════════════════════════════════╝\n");	
 	fclose(pont_arq);
 }
 
@@ -168,25 +193,30 @@ void BuscaProduto(Estoque * pnt_deposito)
 	}				
 	do{
 		printf("\nBUSCA DE PRODUTO POR CODIGO\n");
-		printf("------------------------------------------------\n\n");
+		printf("-----------------------------\n\n");
 		printf("Informe o codigo do produto: ");
 		scanf("%d",&indice_codigo);
 		for(int i = 0; i < y; i++)
 		{	
 			if(pnt_deposito[i].codigo == indice_codigo)
 			{
-				printf("================================================================\n");
-				printf("| COD |        DESCRICAO         | QUANTIDADE | VALOR UNITARIO |\n");
-				printf("================================================================\n");
-				printf("|%5d|%26s|%12d|%16.2lf|\n",pnt_deposito[i].codigo,pnt_deposito[i].descricao,pnt_deposito[i].quantidade,pnt_deposito[i].preco);
-				printf("================================================================\n");
+				printf("╔══════════════════════════════════════════════════════════════╗\n");
+				printf("║                **BUSCA DE PRODUTO POR CODIGO**               ║\n");
+				printf("╠══════════════════════════════════════════════════════════════╣\n");	
+				printf("║ COD |        DESCRICAO         | QUANTIDADE | VALOR UNITARIO ║\n");
+				printf("╟──────────────────────────────────────────────────────────────╢\n");
+				printf("║%5d|%26s|%12d|%16.2lf║\n",pnt_deposito[i].codigo,pnt_deposito[i].descricao,pnt_deposito[i].quantidade,pnt_deposito[i].preco);
+				printf("╚══════════════════════════════════════════════════════════════╝\n");
 				t = 1;
 			}	
 		}
 		if(t == 0)
 		{
-			printf("\nProduto nao encontrado!\n\n");
-			printf("------------------------------------------------\n\n");
+			printf("███████████████████████████████████████\n\a");
+			printf("█                                     █\n");
+			printf("█        PRODUTO NAO ENCONTRADO!      █\n");
+			printf("█                                     █\n");
+			printf("███████████████████████████████████████\n\n");	
 		}
 		printf("Continuar busca - 1 | Voltar ao menu - 2 ");
 		scanf("%d",&menu_busca);
@@ -212,7 +242,7 @@ void AtualizaProduto(Estoque * pnt_deposito)
 	
 	do{
 		printf("\nATUALIZAR ESTOQUE\n");
-		printf("------------------------------------------------\n\n");
+		printf("-------------------\n\n");
 		printf("Atualizar quantidade - 1\nVoltar ao menu inicial - 2 ");
 		scanf("%d",&menu_atualiza);
 		system("cls");	
@@ -233,7 +263,7 @@ void AtualizaProduto(Estoque * pnt_deposito)
 					}
 					fclose(pont_arq);
 					printf("ATUALIZAR QUANTIDADE\n");
-					printf("------------------------------------------------\n\n");
+					printf("--------------------\n\n");
 					printf("Informe o codigo do produto: ");
 					scanf("%d",&indice_codigo);
 					printf("\n\n");
@@ -250,19 +280,23 @@ void AtualizaProduto(Estoque * pnt_deposito)
 								scanf("%d",&quantidade);
 								pnt_deposito[i].quantidade = quantidade;
 								printf("\n\n------------------------------------------------\n\n");
-								printf("\n\nESTOQUE ATUALIZADO\n");
-								printf("================================================================\n");
-								printf("| COD |        DESCRICAO         | QUANTIDADE | VALOR UNITARIO |\n");
-								printf("===============================================================|\n");
-								printf("|%5d|%26s|%12d|%16.2lf|\n",pnt_deposito[i].codigo,pnt_deposito[i].descricao,pnt_deposito[i].quantidade,pnt_deposito[i].preco);
-								printf("================================================================\n");
+								printf("╔══════════════════════════════════════════════════════════════╗\n");
+								printf("║                     **ESTOQUE ATUALIZADO**                   ║\n");
+								printf("╠══════════════════════════════════════════════════════════════╣\n");	
+								printf("║ COD |        DESCRICAO         | QUANTIDADE | VALOR UNITARIO ║\n");
+								printf("╟──────────────────────────────────────────────────────────────╢\n");
+								printf("║%5d|%26s|%12d|%16.2lf║\n",pnt_deposito[i].codigo,pnt_deposito[i].descricao,pnt_deposito[i].quantidade,pnt_deposito[i].preco);
+								printf("╚══════════════════════════════════════════════════════════════╝\n");
 								
 								a = 1;
 							}
 							if(a == 0)
 							{
-								printf("PRODUTO NAO ENCONTRADO!\n\n");
-								printf("\n\n------------------------------------------------\n\n");
+								printf("███████████████████████████████████████\n\a");
+								printf("█                                     █\n");
+								printf("█        PRODUTO NAO ENCONTRADO!      █\n");
+								printf("█                                     █\n");
+								printf("███████████████████████████████████████\n\n");
 							}	
 						}
 					}while(a != 1);	
@@ -304,7 +338,7 @@ void RemoveProduto(Estoque * pnt_deposito)
 		fclose(pont_arq);	
 		pont_arq = fopen("estoque.txt","w");
 		printf("REMOVER PRODUTO\n");
-		printf("------------------------------------------------\n\n");
+		printf("---------------\n\n");
 		printf("Informe o codigo do produto a ser removido: ");
 		scanf("%d",&codigo);
 		printf("\n");
@@ -313,12 +347,13 @@ void RemoveProduto(Estoque * pnt_deposito)
 			{
 				if(pnt_deposito[i].codigo == codigo)
 				{
-					printf("\n\nPRODUTO ENCONTRADO\n");
-					printf("================================================================\n");
-					printf("| COD |        DESCRICAO         | QUANTIDADE | VALOR UNITARIO |\n");
-					printf("|===============================================================\n");
-					printf("|%5d|%26s|%12d|%16.2lf|\n",pnt_deposito[i].codigo,pnt_deposito[i].descricao,pnt_deposito[i].quantidade,pnt_deposito[i].preco);
-					printf("================================================================\n");
+					printf("╔══════════════════════════════════════════════════════════════╗\n");
+					printf("║                     **PRODUTO ENCONTRADO**                   ║\n");
+					printf("╠══════════════════════════════════════════════════════════════╣\n\n");	
+					printf("║ COD |        DESCRICAO         | QUANTIDADE | VALOR UNITARIO ║\n");
+					printf("╟──────────────────────────────────────────────────────────────╢\n");
+					printf("║%5d|%26s|%12d|%16.2lf║\n",pnt_deposito[i].codigo,pnt_deposito[i].descricao,pnt_deposito[i].quantidade,pnt_deposito[i].preco);
+					printf("╚══════════════════════════════════════════════════════════════╝\n");
 					r = 1;	
 				}
 				
@@ -330,7 +365,11 @@ void RemoveProduto(Estoque * pnt_deposito)
 			}
 			if(r == 0)
 			{
-				printf("PRODUTO NAO ENCONTRADO!\n\n");
+				printf("███████████████████████████████████████\n\a");
+				printf("█                                     █\n");
+				printf("█        PRODUTO NAO ENCONTRADO!      █\n");
+				printf("█                                     █\n");
+				printf("███████████████████████████████████████\n\n");
 				break;
 			}
 			else if(r == 1)
@@ -349,7 +388,12 @@ void CalculaTotal(Estoque * pnt_deposito)
 	float acumulador = 0.0;
 	int y = 0;
 	
-	pont_arq = fopen("estoque.txt","r");		
+	pont_arq = fopen("estoque.txt","r");
+	printf("╔═══════════════════════════════════════╗\n");
+	printf("║         **VALOR TOTAL DO ESTOQUE**    ║\n");
+	printf("╠═══════════════════════════════════════╣\n\n");	
+	
+	
 	printf("\nVALOR TOTAL DO ESTOQUE\n");
 	printf("------------------------------------------------\n\n");				
 	while(fscanf(pont_arq,"%d\n%[^\n]\n%d\n%f\n",&pnt_deposito[y].codigo,pnt_deposito[y].descricao,&pnt_deposito[y].quantidade,&pnt_deposito[y].preco) != EOF)
@@ -360,8 +404,10 @@ void CalculaTotal(Estoque * pnt_deposito)
 	{
 		acumulador += pnt_deposito[i].quantidade * pnt_deposito[i].preco;
 	}
-	printf("R$ %.2f\n",acumulador);
-	printf("\n------------------------------------------------\n\n");
+	printf("║                                     ║\n");
+	printf("║R$ %.2f\n                            ║\n",acumulador);
+	printf("║                                     ║\n");
+	printf("╚═════════════════════════════════════╝\n");
 	fclose(pont_arq);	
 }
 
@@ -376,9 +422,6 @@ void ReordenaCodigo(Estoque  * pnt_deposito)
 		y++;
 	}
 	fclose(pont_arq);
-	printf("\nREORDENAR CODIGOS\n");
-	printf("------------------------------------------------\n\n");	
-	
 	pont_arq = fopen("estoque.txt","w");
 	
 	for(int i = 0; i < y; i++)
@@ -593,16 +636,16 @@ void FiltraOrdena(Estoque  * pnt_deposito)
 					case 1:
 						BubbleSortDescricao(pnt_deposito, escolha, i);
 						system("cls");
-						printf("\n================================================================\n");
-						printf("|             FILTRAGEM POR DESCRICAO - CRESCENTE              |\n");
+						printf("\n╔══════════════════════════════════════════════════════════════╗\n");
+						printf("║              **FILTRAGEM POR DESCRICAO - CRESCENTE**         ║\n");
 						Imprimir(pnt_deposito, i);
 					break;
 					//Decrescente 
 					case 2:
 						BubbleSortDescricao(pnt_deposito, escolha, i);
 						system("cls");
-						printf("\n================================================================\n");
-						printf("|            FILTRAGEM POR DESCRICAO - DECRESCENTE             |\n");
+						printf("\n╔══════════════════════════════════════════════════════════════╗\n");
+						printf("║              **FILTRAGEM POR DESCRICAO - CRESCENTE**         ║\n");
 						Imprimir(pnt_deposito, i);
 					break;
 					//Caso não seja escolhido uma opção válida
@@ -620,16 +663,16 @@ void FiltraOrdena(Estoque  * pnt_deposito)
 					case 1:
 						BubbleSortCodigo(pnt_deposito, escolha, i);
 						system("cls");
-						printf("\n================================================================\n");
-						printf("|                FILTRAGEM POR CODIGO - CRESCENTE              |\n");
+						printf("\n╔══════════════════════════════════════════════════════════════╗\n");
+						printf("║              **FILTRAGEM POR CODIGO - CRESCENTE**            ║\n");
 						Imprimir(pnt_deposito, i);
 					break;
 					//Decrescente 
 					case 2:
 						BubbleSortCodigo(pnt_deposito, escolha, i);
 						system("cls");
-						printf("\n================================================================\n");
-						printf("|               FILTRAGEM POR CODIGO - DECRESCENTE             |\n");
+						printf("\n╔══════════════════════════════════════════════════════════════╗\n");
+						printf("║             **FILTRAGEM POR CODIGO - DECRESCENTE**           ║\n");
 						Imprimir(pnt_deposito, i);
 					break;
 					//Caso não seja escolhido uma opção válida
@@ -648,16 +691,16 @@ void FiltraOrdena(Estoque  * pnt_deposito)
 						
 						BubbleSortQuantidade(pnt_deposito, escolha, i);
 						system("cls");
-						printf("\n================================================================\n");
-						printf("|              FILTRAGEM POR QUANTIDADE - CRESCENTE            |\n");
+						printf("\n╔══════════════════════════════════════════════════════════════╗\n");
+						printf("║             **FILTRAGEM POR QUANTIDADE - CRESCENTE**         ║\n");
 						Imprimir(pnt_deposito, i);
 					break;
 					//Decrescente
 					case 2:
 						BubbleSortQuantidade(pnt_deposito, escolha, i);
 						system("cls");
-						printf("\n================================================================\n");
-						printf("|            FILTRAGEM POR QUANTIDADE - DECRESCENTE            |\n");
+						printf("\n╔══════════════════════════════════════════════════════════════╗\n");
+						printf("║          **FILTRAGEM POR QUANTIDADE - DECRESCENTE**          ║\n");
 						Imprimir(pnt_deposito, i);
 					break;
 					//Caso não seja escolhido uma opção válida
@@ -675,16 +718,16 @@ void FiltraOrdena(Estoque  * pnt_deposito)
 					case 1:
 						BubbleSortPreco(pnt_deposito, escolha, i);
 						system("cls");
-						printf("\n================================================================\n");
-						printf("|                FILTRAGEM POR PRECO - CRESCENTE               |\n");
+						printf("\n╔══════════════════════════════════════════════════════════════╗\n");
+						printf("║             **FILTRAGEM POR PRECO - CRESCENTE**              ║\n");
 						Imprimir(pnt_deposito, i);
 					break;
 					//Decrescente 
 					case 2:
 						BubbleSortPreco(pnt_deposito, escolha, i);
 						system("cls");
-						printf("\n================================================================\n");
-						printf("|                FILTRAGEM POR PRECO - DECRESCENTE             |\n");
+						printf("\n╔══════════════════════════════════════════════════════════════╗\n");
+						printf("║             **FILTRAGEM POR PRECO - DECRESCENTE**            ║\n");
 						Imprimir(pnt_deposito, i);
 					break;
 					//Caso não seja escolhido uma opção válida

@@ -22,31 +22,31 @@ int main()
 		switch(menu)
 		{
 			case 1:
-				CadastraProduto(deposito);
+				ListaProduto(deposito);
 			break;
 			case 2:
-				ListaProduto(deposito);
+				FiltraOrdena(deposito);
 			break;
 			case 3:
 				BuscaProduto(deposito);
 			break;
 			case 4:
-				AtualizaProduto(deposito);
+				CalculaTotal(deposito);
 			break;
 			case 5:
-				RemoveProduto(deposito);
+				CadastraProduto(deposito);
 			break;
 			case 6:
-				ReordenaCodigo(deposito);
+				AtualizaProduto(deposito);
 			break;
 			case 7:
-				FiltraOrdena(deposito);
+				ReordenaCodigo(deposito);
 			break;
 			case 8:
-				ApagaDadosSistema(deposito);
+				RemoveProduto(deposito);
 			break;
 			case 9:
-				CalculaTotal(deposito);
+				ApagaDadosSistema(deposito);
 			break;
 			case 0:
 				system("cls");
